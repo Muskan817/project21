@@ -17,25 +17,17 @@ function draw() {
   weight=random(30,52);
   thickness=random(22,83);
 }
-  hasCollided(bullet, wall) {
-    
-    bulletRightEdge=bullet.x +bullet.width; wallLeftEdge=wall.x;
-    if (bulletRightEdge>=wallLeftEdge) {
-      return true 
-    } 
-    return false;
-  }
-  wall.width=thickness;
+wall.width=thickness;
   bullet.velocityX=speed;
-  if(hasCollided(bullet,wall))
+  if(wall.x-bullet.x<=bullet.width/2 + wall.width/2 )
   {
    bullet.velocityX=0;
    var damage=0.5*weight*speed*speed/thickness*thickness*thickness
-   
+
    if(damage>10){
-  wall.shapeColor=("red")
+   wall.shapeColor=("red")
   }
-    
+
    if(damage<10 ){
     wall.shapeColor=("green")
     }
@@ -43,3 +35,13 @@ function draw() {
   }
   drawSprites();
 }
+
+
+function hasCollided(bullet, wall) {
+   bulletRightEdge=bullet.x +bullet.width; 
+   wallLeftEdge=lwall.x; 
+   if (bulletRightEdge>=wallLeftEdge) { 
+     return true
+     }
+      return false; 
+    }
