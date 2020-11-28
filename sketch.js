@@ -37,11 +37,4 @@ wall.width=thickness;
 }
 
 
-function hasCollided(bullet, wall) {
-   bulletRightEdge=bullet.x +bullet.width; 
-   wallLeftEdge=lwall.x; 
-   if (bulletRightEdge>=wallLeftEdge) { 
-     return true
-     }
-      return false; 
-    }
+
